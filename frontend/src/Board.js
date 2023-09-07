@@ -1,24 +1,41 @@
 import React from 'react';
-import { Box, Heading, Button, useColorMode, Textarea, SimpleGrid } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Navbar from './Components/Navbar';
 
 const Board = () => {
-    const { colorMode, toggleColorMode } = useColorMode();
-  
-    return (
-      <Box textAlign="center" p={10}>
-        <Heading>Main Page</Heading>
-        <p>This is the about page content.</p>
-        <Button onClick={toggleColorMode} colorScheme="blue">
-          Toggle Color Mode
-        </Button>
+  return (
+    <Box
+      display="flex"
+      flexDirection="column"
+      minHeight="100vh"
+    >
+      <Navbar />
+      <Box
+        flex="1"
+        mx={4}
+        p={4}
+      >
         <Textarea
-            placeholder="Start typing..."
-            size="lg"
-            resize="none"
-            style={{width: '100%', height: '100%'}}
+          placeholder="Start typing..."
+          size="lg"
+          resize="none"
+          py={[5, 7, 10]}
+          px={[10, 70, 160]}
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            outline: 'none',
+            fontSize: '16px',
+            lineHeight: '1.5',
+            backgroundColor: 'transparent',
+            boxShadow: 'none',
+            color: 'inherit',
+          }}
         />
       </Box>
-    );
-  };
+    </Box>
+  );
+};
 
 export default Board;
